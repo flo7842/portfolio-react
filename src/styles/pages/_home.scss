@@ -1,0 +1,128 @@
+.home {
+    height: 100vh;
+    .homeContent {
+      background: linear-gradient(115deg, #3B4358 50%, transparent 100%);
+      width: 100%;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: space-evenly;
+  
+      &:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        left: 32%;
+        width: 68%;
+        background: url('../../media/flo.jpg') no-repeat right/cover;
+        z-index: -1;
+        filter: brightness(60%);
+      }
+  
+      .content {
+        font-family: $font-1;
+        margin-left: 10%;
+        h1 {
+          font-size: 5rem;
+          font-family: $font-3;
+          color: $white;
+          text-transform: uppercase;
+          text-shadow: 3px 6px 2px $black;
+        }
+        h2 {
+          font-size: 2.5rem;
+          padding: 1.5rem 0 7rem;
+          color: $white;
+          text-shadow: 1px 4px 1px $black;
+        }
+        .pdf {
+          a {
+            font-size: 1.5rem;
+            background: $color-2;
+            padding: 1rem 2rem;
+            border-radius: $borderRadius;
+            box-shadow: 0 5px 1px #00000085;
+            transition: 0.2s ease;
+  
+            &:hover {
+              background: $color-4;
+            }
+          }
+        }
+      }
+      .navigation{
+        margin-left: 10%;
+        width: 29%;
+        ul li{
+          padding: 17px 0 17px 0;
+        }
+        ul li a{
+          font-size: 2rem;
+          color: $color-3;
+          position: relative;
+        }
+        ul li a i{
+          font-size: 1.6rem;
+          color: $color-4;
+        }
+        ul li a span{
+          margin-left: 1rem;
+        }
+
+        .progressBar {
+          height: .3rem;
+          background: transparent;
+          border-radius: 50px;
+          margin-top: .2rem;
+          width: 0;
+          position: absolute;
+          &:after {
+            content: '';
+            border-radius: 50px;
+            height: .4rem;
+            width: 0;
+            position: absolute;
+
+           
+          }
+        }
+        ul li a:hover .progressBar{
+            background: $color-2;
+            animation: linesflo 0.4s ease-out forwards;
+          
+          &:after{
+            
+            @keyframes linesflo {
+              from {
+                width: 0%;
+              }
+              to {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      .socialNetwork ul{
+        margin: auto;
+      }
+    }
+  }
+  @media screen and (max-width: 850px){
+    .homeContent {
+      margin: 0 !important;
+    }
+  }
+  @media screen and (max-width:580px){
+    .homeContent {
+      &:after {
+      background: url('../../media/flo.jpg') no-repeat 60% 50%/cover !important;
+      }
+      h1 {
+        font-size: 3rem !important;
+      }
+      h2 {
+        font-size: 1.8rem !important;
+      }
+    }
+  }
